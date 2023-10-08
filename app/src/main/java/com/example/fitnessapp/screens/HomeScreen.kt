@@ -10,5 +10,5 @@ import com.example.fitnessapp.components.Scaffold
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun HomeScreen(nav: () -> Unit) {
-    Scaffold(title = stringResource(id = R.string.title))
+    Scaffold(title = stringResource(id = R.string.title), nav)
 }

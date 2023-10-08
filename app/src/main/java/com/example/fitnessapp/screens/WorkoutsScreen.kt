@@ -7,6 +7,7 @@ import com.example.fitnessapp.components.Scaffold
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
-fun WorkoutsScreen() {
-    Scaffold(title = "Workouts")
+fun WorkoutsScreen(nav: () -> Unit) {
+    Scaffold(title = "Workouts", nav)
+
 }

@@ -3,6 +3,7 @@ package com.example.fitnessapp.components
 import android.annotation.SuppressLint
 import com.example.fitnessapp.components.Scaffold
 import android.os.Build
+import android.view.View.OnClickListener
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -27,7 +28,7 @@ import androidx.compose.ui.unit.sp
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Scaffold(title: String) {
+fun Scaffold(title: String, nav: () -> Unit) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -45,7 +46,9 @@ fun Scaffold(title: String) {
                 ),
                 actions = {
                     IconButton(
-                        onClick = { },
+                        onClick = { OnClickListener {
+                            nav
+                        } },
                         modifier = Modifier
                             .size(46.dp),
                         content = {
